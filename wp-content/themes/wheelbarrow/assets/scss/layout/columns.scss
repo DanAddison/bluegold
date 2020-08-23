@@ -1,0 +1,63 @@
+/*********************************************************
+## 1. Basic Flexbox grid system
+*********************************************************/
+// This is primarily intended as a simple CSS Grid fallback for IE.
+// It can be useful as-is with no Grid override.
+// Nest '.column' divs inside a '.column-container' div.
+// This provides a basic layout which jumps to horizontal arrangment of elements above one breakpoint.
+
+.column-container {
+  // go from vertical to horizontal arrangement
+  @include mq($bp-columns) {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+.column {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  margin-bottom: $spacing;
+}
+
+@include mq($bp-columns) {
+  .column {
+    padding: $spacing/4;
+    flex: 1;
+  }
+  .column--double {
+    flex: 2;
+  }
+  .column--align-center {
+    text-align: center;
+  }
+  .column--align-right {
+    text-align: right;
+  }
+}
+
+/*********************************************************
+## 2. Extend the system using CSS Grid
+*********************************************************/
+// This class is an easy starting point for replacing the Flexbox layout with a Grid layout.
+// It overrides the 'display:flex' stuff wherever Grid is supported.
+// It provides responsive columns without needing any media queries.
+.column-container--grid {
+  @supports (display: grid) {
+    // having trouble with grid items breaking beyond 100% width if scrren is narrower than the minmax value, so wait to add grid:
+    @include mq($bp-s) {
+      display: grid;
+      grid-gap: $spacing/2;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+      .column {
+        padding: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

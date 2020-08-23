@@ -1,0 +1,30 @@
+{
+  "name": "storefrontiersman",
+  "version": "2.0.0",
+  "description": "My child theme for Storefront WooCommerce theme",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Dan Addison",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.10",
+    "gulp": "github:gulpjs/gulp",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-uglify": "^3.0.2"
+  }
+}

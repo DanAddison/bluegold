@@ -1,0 +1,217 @@
+// restrict width of catalog and single product pages
+.row--woo {
+  max-width: $shop-width;
+}
+
+// also target other woo templates which don't receive my .row-woo div from the 'before main content' hook
+.woocommerce-cart .page .row,
+.woocommerce-checkout .page .row,
+.woocommerce-account .page .row {
+  max-width: $shop-width;
+}
+
+/*********************************************************
+## Responsive column overrides
+In Customizer > Product Catalog > Products per Row set this to 3
+setting this to 2 involves images too big,
+setting to 4 will need even more styling overrides 
+*********************************************************/
+
+// one column only on mobiles
+@include mq-max($bp-m) {
+  .woocommerce-page.columns-3 ul.products li.product,
+  .woocommerce-page ul.products.columns-3 li.product,
+  .woocommerce.columns-3 ul.products li.product,
+  .woocommerce ul.products.columns-3 li.product {
+    width: 100% !important;
+  }
+}
+
+// two columns only up to bp-xxl
+@include mq-max($bp-xxl) {
+  .woocommerce.columns-3 ul.products li.product,
+  .woocommerce-page.columns-3 ul.products li.product,
+  .woocommerce ul.products.columns-3 li.product,
+  .woocommerce-page ul.products.columns-3 li.product {
+    width: 48%; /* was 30.75% */
+  }
+
+  .woocommerce ul.products li.first,
+  .woocommerce-page ul.products li.first {
+    clear: none; /* was both */
+  }
+
+  .woocommerce-page.columns-3 ul.products li.product:nth-child(even),
+  .woocommerce-page ul.products.columns-3 li.product:nth-child(even),
+  .woocommerce.columns-3 ul.products li.product:nth-child(even),
+  .woocommerce ul.products.columns-3 li.product:nth-child(even) {
+    margin-right: 0;
+  }
+
+  .woocommerce-page.columns-3 ul.products li.product:nth-child(odd),
+  .woocommerce-page ul.products.columns-3 li.product:nth-child(odd),
+  .woocommerce.columns-3 ul.products li.product:nth-child(odd),
+  .woocommerce ul.products.columns-3 li.product:nth-child(odd) {
+    margin-right: 3.8%;
+  }
+}
+
+@include mq($bp-xxl) {
+  .woocommerce.columns-3 ul.products li.product,
+  .woocommerce-page.columns-3 ul.products li.product,
+  .woocommerce ul.products.columns-3 li.product,
+  .woocommerce-page ul.products.columns-3 li.product {
+    width: 32%; /* was 30.75% */
+    margin-right: 2%;
+  }
+
+  .woocommerce.columns-3 ul.products li.product.last,
+  .woocommerce-page.columns-3 ul.products li.product.last,
+  .woocommerce ul.products.columns-3 li.product.last,
+  .woocommerce-page ul.products.columns-3 li.product.last {
+    margin-right: 0;
+  }
+}
+
+// remove 'showing all 4 results' on Woo archives
+.woocommerce-result-count {
+  display: none;
+}
+
+// remove bottom margin on image
+.woocommerce ul.products li.product a img {
+  margin-bottom: 0;
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale {
+  top: 0.5em;
+  right: 0.5em;
+  margin: 0;
+  background-color: $gold-dark;
+  padding: 0;
+}
+.woocommerce span.onsale {
+  // display: none;
+  transition: 0.3s;
+  opacity: 0;
+  left: 0.5em;
+  right: auto;
+}
+
+li.product {
+  text-align: center;
+
+  a {
+    display: block;
+    position: relative;
+
+    img {
+      transition: all 0.4s ease;
+      // border-radius: 50%; // make images circular
+    }
+
+    .woocommerce-loop-product__title {
+      padding: 1em 1.5em 0;
+    }
+
+    @include mq($bp-m) {
+      font-size: em(18);
+    }
+
+    // show product name and price only in overlay on hover
+    @include mq($bp-l) {
+      background-color: $black;
+      // border-radius: 50%; // make overlays circular
+      font-size: em(24);
+      font-weight: 700;
+
+      .woocommerce-loop-product__title {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.5s ease;
+        color: white;
+      }
+
+      .price {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 75%;
+        transform: translateY(-75%);
+        opacity: 0;
+        transition: all 0.5s ease;
+        color: white;
+
+        .woocommerce-Price-amount,
+        .woocommerce-Price-currencySymbol {
+          color: white;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        img {
+          opacity: 0.2;
+        }
+
+        .woocommerce-loop-product__title,
+        .price,
+        .onsale {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: $gold-dark;
+}
+
+/*********************************************************
+## Buttons
+*********************************************************/
+.woocommerce a.button {
+  transition: 0.2s;
+  background-color: $blue-dark;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $gold-dark;
+    color: $white;
+  }
+}
+
+.woocommerce a.button.alt,
+.woocommerce button.button.alt {
+  transition: 0.2s;
+  background-color: $blue-dark;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $gold-dark;
+  }
+}
+
+/*********************************************************
+## Checkout
+*********************************************************/
+.woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text p {
+  margin-left: 0;
+}
+
+/*********************************************************
+## Info notification banners
+*********************************************************/
+.woocommerce-info,
+.woocommerce-message,
+.woocommerce-error {
+  background-color: $canvas-medium;
+}

@@ -1,0 +1,11 @@
+.page__title {
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.page__entry {
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}

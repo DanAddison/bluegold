@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    Sizes
+\*------------------------------------*/
+$bp-xs: 18.75em; // 300
+$bp-s: 26.25em; // 420
+$bp-m: 37.5em; // 600
+$bp-l: 56.25em; // 900
+$bp-xl: 68.75em; // 1100
+$bp-xxl: 81.25em; // 1300
+
+$content-max-width: 850px; // has to be in pixels else headings will be wider
+$template-max-width: 120em;
+$max-width: 100em; // 1600px
+// $shop-width: $bp-xxl;
+$shop-width: $max-width;
+$bp-menu: 62.5em;
+$bp-columns: $bp-l;
+
+// spacing
+$spacing: 2em;
+$spacing-percent: 3%; // Used by grid system
+
+// sizes map
+$bp-sizes: (
+  bp-xs: $bp-xs,
+  bp-s: $bp-s,
+  bp-m: $bp-m,
+  bp-l: $bp-l,
+  bp-xl: $bp-xl,
+  bp-xxl: $bp-xxl,
+  bp-menu: $bp-menu,
+);
+
+/*------------------------------------*\
+    Font Variables
+\*------------------------------------*/
+$copy-face: "Nunito", sans-serif;
+// $headings-face: "Alata", sans-serif;
+$headings-face: $copy-face;
+$headings-weight: 500;
+
+$footer-font-size: 1em;
+
+/*------------------------------------*\
+    Colours - some Wheelbarrow defaults
+\*------------------------------------*/
+$white: #fff;
+$grey-lightest: #dfdfdf;
+$grey-light: #d5d5d5;
+$grey: #bdbdbd;
+$grey-dark: #9a9a9a;
+$grey-darkest: #555;
+$black: #000;
+
+$copy: #111;
+
+$gold: #a09860;
+$blue: #5d8e90;
+$gold-dark: #ce7f2b;
+$blue-dark: #284446;
+
+$headings: $copy;
+
+$footer-links: $grey-lightest;
+$footer-copy: $grey-light;
+
+// Backgrounds
+$canvas-color: #fefcf6;
+$canvas-medium: #f7f4e7;

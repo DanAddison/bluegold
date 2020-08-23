@@ -1,0 +1,49 @@
+.post--studio {
+  display: flex;
+  flex-direction: column;
+
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  .post__image {
+    order: -1;
+  }
+
+  .post__header {
+    margin-bottom: $spacing;
+
+    .post__title {
+      margin-top: 0;
+      margin-bottom: 0.25em;
+    }
+
+    .cat-links {
+      margin-bottom: 0.5em;
+      font-size: em(18);
+
+      a {
+        color: $grey-darkest;
+        // text-decoration: none;
+      }
+    }
+  }
+
+  @include mq($bp-xxl) {
+    position: relative;
+
+    .post__image {
+      position: absolute;
+      top: 0;
+      left: -200px;
+    }
+
+    .post__header {
+      min-height: 125px;
+    }
+
+    .post__content {
+      padding-left: $spacing;
+    }
+  }
+}

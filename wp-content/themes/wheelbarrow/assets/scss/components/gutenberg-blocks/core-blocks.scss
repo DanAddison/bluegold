@@ -1,0 +1,193 @@
+/*********************************************************
+## add responsive sizing to the largest 2 paragraph text settings
+*********************************************************/
+.site-main {
+  p,
+  h2,
+  h3,
+  h4 {
+    max-width: $content-max-width;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+}
+
+p.has-large-font-size {
+  font-size: em(20);
+
+  @include mq($bp-m) {
+    font-size: em(22);
+  }
+
+  @include mq($bp-l) {
+    font-size: em(26);
+  }
+
+  @include mq($bp-xxl) {
+    font-size: em(30);
+  }
+}
+
+/*********************************************************
+## Columns
+*********************************************************/
+.wp-block-columns {
+  .wp-block-column {
+    margin-bottom: $spacing;
+  }
+
+  // override flex-wrap to keep columns stacking until wider than default (700px)
+  @include mq-max(43.75em) {
+    display: block;
+
+    .wp-block-column {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// override nowrap to keep (3 or 4) columns at 2 across until later
+.wp-block-columns {
+  @include mq-max($bp-xl) {
+    flex-wrap: wrap;
+
+    .wp-block-column:nth-child(3n) {
+      margin-left: 0;
+    }
+  }
+}
+
+/*********************************************************
+## Quote and Pullquote blocks 
+*********************************************************/
+.wp-block-quote,
+.wp-block-quote.is-style-large {
+  padding: 0 2em;
+  border-left: 7px solid $canvas-medium;
+  margin: 2em 0;
+
+  @include mq($bp-l) {
+    margin-right: 5em;
+  }
+
+  p {
+    font-style: normal;
+    line-height: 1.45;
+  }
+}
+
+.wp-block-quote {
+  p {
+    font-size: 1.25em;
+  }
+}
+
+/*********************************************************
+## Media+Text block
+*********************************************************/
+.wp-block-media-text {
+  margin-bottom: $spacing;
+
+  .wp-block-media-text__content {
+    padding: 0;
+    margin-bottom: 1em;
+  }
+
+  .wp-block-media-text__media {
+    margin-bottom: 1em;
+  }
+
+  @include mq(600px) {
+    .wp-block-media-text__content {
+      padding: 0 $spacing;
+      margin-bottom: 0;
+    }
+
+    .wp-block-media-text__media {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*********************************************************
+## image block
+*********************************************************/
+.wp-block-image {
+  margin-bottom: $spacing;
+
+  img {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.wp-block-column .wp-block-image {
+  margin-bottom: 0;
+}
+
+/*********************************************************
+## Cover-image block
+*********************************************************/
+// .wp-block-cover {
+//   margin: 2em 0;
+// }
+
+/*********************************************************
+## Embed blocks
+*********************************************************/
+figure {
+  margin: 0;
+}
+
+.wp-block-embed {
+  margin: 0 auto $spacing;
+  max-width: 1000px;
+}
+
+/*********************************************************
+## Table block
+*********************************************************/
+.wp-block-table {
+  display: table;
+  margin: 2em 0;
+
+  &.is-style-regular td {
+    border: 1px solid $grey-light;
+  }
+}
+
+.wp-block-table th {
+  padding: 4px 4px;
+  text-align: left;
+}
+
+.wp-block-table td {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+/*********************************************************
+## Separator block
+*********************************************************/
+.wp-block-separator {
+  margin: 2em auto;
+
+  @include mq($bp-m) {
+    margin: 4em auto;
+  }
+
+  &.is-style-default {
+    max-width: 300px;
+  }
+}
+
+/*********************************************************
+## Gallery block
+*********************************************************/
+.wp-block-gallery {
+  margin: $spacing 0;
+
+  .blocks-gallery-item img {
+    margin-bottom: 0;
+  }
+}

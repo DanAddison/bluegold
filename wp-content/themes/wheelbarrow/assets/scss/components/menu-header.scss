@@ -1,0 +1,70 @@
+// menus
+.menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+// mobile view
+.menu--main {
+  margin-top: $spacing * 2;
+  text-align: center;
+
+  li {
+    padding: $spacing/4 0;
+    margin-bottom: 0;
+    position: relative;
+
+    a {
+      font-size: em(26);
+      text-decoration: none;
+      display: inline-block;
+      font-weight: normal;
+    }
+  }
+
+  // @include mq($bp-menu) {
+  //   text-align: right;
+  //   margin-right: -1em;
+  //   padding-bottom: 0;
+
+  //   li {
+  //     display: inline-block;
+  //     padding: 0 $spacing/2;
+  //     vertical-align: middle;
+  //     position: relative;
+
+  //     a {
+  //       font-size: em(18);
+  //     }
+  //   }
+  // }
+}
+
+.menu--main li a {
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -4px;
+    right: -4px;
+    background-color: rgba($blue, 0.3);
+    transform-origin: center top;
+    transform: scaleY(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    transform-origin: center bottom;
+    transform: scaleY(1);
+  }
+}

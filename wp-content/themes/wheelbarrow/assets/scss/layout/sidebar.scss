@@ -1,0 +1,38 @@
+// When dynamic sidebar is active these rules apply
+body.has-sidebar {
+  .content-area {
+    padding: 0;
+  }
+
+  .widget-area {
+    margin-top: $spacing * 2;
+    @include center-block;
+    max-width: 800px;
+
+    @include mq($bp-s) {
+      padding: 0 $spacing * 2;
+    }
+
+    @include mq($bp-m) {
+      padding: 0;
+    }
+
+    @include mq($bp-xl) {
+      margin-top: 0;
+      padding-left: $spacing;
+    }
+  }
+
+  .sidebar-wrapper {
+    border-radius: 8px;
+    background-color: $canvas-medium;
+
+    @include mq($bp-m) {
+      display: flex;
+    }
+
+    @include mq($bp-xl) {
+      display: block;
+    }
+  }
+}

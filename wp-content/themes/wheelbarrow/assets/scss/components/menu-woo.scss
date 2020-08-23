@@ -1,0 +1,69 @@
+.search-form {
+  margin-bottom: 0;
+
+  label {
+    position: relative;
+  }
+
+  .search-field {
+    max-width: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s linear all;
+    font-size: 13px;
+    margin-bottom: 0;
+    padding: 0;
+
+    &:focus {
+      max-width: 100%;
+      opacity: 1;
+      padding: 0.2em 2em 0.2em 0.5em;
+    }
+  }
+
+  .icon-search {
+    cursor: pointer;
+  }
+}
+
+/*--------------------------------------------------------------
+# Cart + User icons
+--------------------------------------------------------------*/
+.menu--icons {
+  text-align: center;
+  margin-top: $spacing/2;
+  margin-bottom: 0.75em;
+
+  li {
+    margin-bottom: 0;
+    padding: 0 0.5em;
+    display: inline-block;
+    position: relative;
+    font-size: 1.25em;
+
+    a {
+      text-decoration: none;
+    }
+
+    i {
+      position: relative;
+    }
+  }
+
+  .icon-cart {
+    .cart-count {
+      position: absolute;
+      left: 104%;
+      top: -8px;
+      font-family: $headings-face;
+      font-size: em(10);
+      font-weight: 700;
+      color: $grey-dark;
+    }
+  }
+
+  // @include mq($bp-menu) {
+  //   text-align: right;
+  //   margin-top: 0;
+  // }
+}

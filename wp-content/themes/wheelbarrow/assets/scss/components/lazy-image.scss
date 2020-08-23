@@ -1,0 +1,30 @@
+#lazy-image,
+#placeholder-overlay {
+  background-size: cover;
+  background-position: center;
+}
+
+#lazy-image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 33.333%;
+  overflow: hidden;
+}
+
+#placeholder-overlay {
+  position: absolute;
+  /* Negative margins to retain sharp edges */
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  /* Blur out pixelated image */
+  filter: blur(10px);
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+#placeholder-overlay.fade-out {
+  /* Fade out with a class */
+  opacity: 0;
+}

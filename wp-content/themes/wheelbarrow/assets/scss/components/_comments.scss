@@ -1,0 +1,75 @@
+.comments-area {
+  background-color: #f5f4f4;
+
+  .comments-wrapper {
+    max-width: $bp-l;
+    padding: 0.5em 1em;
+    font-family: $copy-face;
+
+    @include mq($bp-m) {
+      padding: 1.5em 3em;
+    }
+  }
+
+  .comments-title {
+    font-size: 1.3em;
+  }
+
+  .comment-list {
+    padding-left: 1.25em;
+    margin-left: 0;
+
+    @include mq($bp-l) {
+      margin-left: 2em;
+    }
+  }
+}
+
+.comment-body {
+  a {
+    color: $action;
+  }
+
+  .reply {
+    font-family: $headings-face;
+    margin-bottom: 2em;
+  }
+}
+
+.comment-metadata {
+  font-weight: bold;
+  font-size: 90%;
+
+  a {
+    color: $copy;
+    text-decoration: none;
+  }
+}
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.comment-content p {
+  margin-bottom: 0.5em;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+.comment-author {
+  a {
+    font-family: $headings-face;
+    font-size: 1.2em;
+  }
+}
+
+.comment-form {
+  input[type="submit"] {
+    &:hover,
+    &:focus {
+      background-color: $action;
+    }
+  }
+}

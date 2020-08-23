@@ -1,0 +1,134 @@
+/****************************
+First, general widget stylings 
+***************************/
+.widget {
+  padding: $spacing/2;
+  width: 100%;
+  font-family: $headings-face;
+  border-radius: 10px;
+  border: 1px solid $grey;
+  // background-color: $canvas-medium;
+
+  // all lists which could include Navigation, Pages, Categories, Text etc:
+  ul,
+  ol {
+    padding: 0.5em 0 0;
+    margin-bottom: 0;
+
+    li {
+      display: block;
+
+      ul,
+      ol {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  /* Make sure select elements fit in widgets. */
+  select {
+    width: 100%;
+    height: 2.5em;
+    padding: 10px;
+    font-family: $headings-face;
+    border: 1px solid #ccc;
+  }
+}
+
+.widget-title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+/*********************************************************
+## Text widget
+*********************************************************/
+
+/*********************************************************
+## Archive and Categories widgets
+*********************************************************/
+
+/*********************************************************
+## Menu widget
+*********************************************************/
+
+/*********************************************************
+## Search widget
+*********************************************************/
+
+/*********************************************************
+## Calendar widget
+*********************************************************/
+// .widget_calendar {
+// 	font-weight: 400;
+
+// 	caption {
+// 		padding: .5em 0;
+// 		font-size: 1em;
+// 		font-weight: 500;
+// 		text-align: left;
+// 	}
+
+// 	thead {
+// 		background: transparent;
+// 		color: black;
+
+// 		th {
+// 			border-bottom-width: 2px;
+// 		}
+// 	}
+
+// 	td {
+// 		padding: .2em;
+// 		font-size: .8em;
+// 		text-align: center;
+// 		background: white;
+// 		border: 1px solid hsl(0, 0%, 80%);
+// 	}
+
+// 	th {
+// 		border: none;
+// 		text-align: center;
+// 	}
+
+// 	.pad {
+// 		background: #eaeaea;
+// 	}
+
+// 	a {
+// 		font-weight: 900;
+// 		text-decoration: none;
+// 	}
+
+// }
+
+/****************************
+Footer widget styles - Cart 
+***************************/
+.footer-widgets {
+  .row {
+    max-width: none;
+  }
+  max-width: 500px;
+  margin-left: auto;
+
+  .widget_shopping_cart {
+    background-color: rgba($canvas-medium, 0.5);
+    .widget-title {
+      display: none;
+    }
+    .woocommerce-mini-cart__buttons a {
+      font-size: em(13);
+      height: 2.2em;
+    }
+  }
+
+  ul.product_list_widget li img {
+    width: 80px;
+  }
+
+  .woocommerce-mini-cart__total.total {
+    display: none;
+  }
+}

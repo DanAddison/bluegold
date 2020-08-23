@@ -1,0 +1,87 @@
+.site-footer {
+  background-color: $canvas-medium;
+  margin-top: $spacing;
+
+  .row {
+    max-width: $template-max-width;
+    padding-bottom: 1em;
+  }
+
+  a {
+    // @include links($footer-links);
+    text-decoration: none;
+  }
+}
+
+.sub-footer {
+  p {
+    font-size: em(16);
+  }
+  @include mq-max($bp-columns) {
+    .column {
+      padding-top: 0;
+    }
+    .column--copyright {
+      padding-bottom: 0;
+    }
+  }
+
+  .column--copyright {
+    @include mq($bp-columns) {
+      order: -1;
+    }
+  }
+}
+
+// Company address details
+// .footer-contacts {
+//   margin-bottom: 3em;
+
+//   p ~ p {
+//     margin: $spacing/2 0 0 0;
+//   }
+
+//   .contacts__name {
+//     font-weight: bold;
+//   }
+
+//   .contacts__phone {
+//     margin-top: 0;
+//   }
+
+//   .contacts__address {
+//     p {
+//       margin: 0;
+//     }
+//   }
+
+//   @include mq($bp-l) {
+//     width: 60%;
+//   }
+// }
+
+// newsletter signup form
+#mce-EMAIL {
+  width: 210px;
+  margin-bottom: 0.5em;
+}
+#mc-embedded-subscribe {
+  padding: 0.5em;
+  width: 210px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+  font-family: $headings-face;
+}
+#mc-embedded-subscribe-form {
+  margin-bottom: 0;
+}
+
+// copyright, socials, credit
+.sub-footer {
+  .column {
+    margin-bottom: $spacing/2;
+  }
+  .legal__copyright {
+    margin-bottom: 0.25em;
+  }
+}

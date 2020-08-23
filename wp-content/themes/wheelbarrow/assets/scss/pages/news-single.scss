@@ -1,0 +1,44 @@
+.breadcrumb {
+  font-size: em(16);
+}
+
+.post--news {
+  @include mq($bp-s) {
+    background-color: $canvas-medium;
+    padding: $spacing;
+  }
+
+  @include mq($bp-l) {
+    padding-top: 3em;
+    padding-left: $spacing * 2;
+    padding-right: $spacing * 2;
+  }
+
+  .news__header {
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+  }
+
+  .news__entry {
+    margin-bottom: $spacing;
+  }
+}
+
+/*********************************************************
+## News Header - shared by news preview with alterations
+*********************************************************/
+.news__header {
+  .news__title {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  .news__meta {
+    p {
+      margin-bottom: 0.25em;
+    }
+  }
+}

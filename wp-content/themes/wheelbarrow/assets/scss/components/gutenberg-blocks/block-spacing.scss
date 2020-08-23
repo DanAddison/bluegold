@@ -1,0 +1,34 @@
+/*********************************************************
+## responsive Spacing block 
+*********************************************************/
+.block-spacing {
+  display: block;
+  height: $spacing/2; // setting here because I can't seem to get the block to automatically return the 'small' value
+}
+
+.block-spacing--small {
+  height: $spacing/2;
+}
+
+.block-spacing--medium {
+  height: $spacing;
+}
+
+.block-spacing--large {
+  height: $spacing * 2;
+}
+
+@include mq($bp-l) {
+  .block-spacing,
+  .block-spacing--small {
+    height: $spacing;
+  }
+
+  .block-spacing--medium {
+    height: $spacing * 2;
+  }
+
+  .block-spacing--large {
+    height: $spacing * 4;
+  }
+}

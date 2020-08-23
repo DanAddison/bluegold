@@ -1,0 +1,23 @@
+.post--portfolio {
+  .project__image {
+    @include image-background;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+  }
+
+  .post__title {
+    margin-top: 1em;
+  }
+
+  .project-categories {
+    margin-left: 0;
+    padding-bottom: $spacing;
+    a {
+      &:not(:last-child):after {
+        content: ",";
+      }
+    }
+  }
+}
