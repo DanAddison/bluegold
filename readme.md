@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img alt="" src="wp-content/themes/wheelbarrow/screenshot.png" width="500" />
+    <img alt="" src="wp-content/themes/wheelbarrow/screenshot.jpg" width="500" />
   </a>
 </p>
 <h1 align="center">
